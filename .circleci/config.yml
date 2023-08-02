@@ -1,0 +1,8 @@
+jobs:
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: sudo apt-get update && sudo apt-get install -y dnsutils
+      - run: dig download.clojure.org
